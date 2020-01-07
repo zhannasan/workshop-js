@@ -26,7 +26,7 @@ console.log(auMoinsUneVilleAvecUnTiret);
 var villesSansTiretSansEspace = villes.filter(function(element){
     var character = "-";
     var space = "\u0020";
-    if(element.indexOf(character)<0 && element.indexOf(space)<0){
+    if(element.indexOf("-")<0 && element.indexOf("\u0020")<0){
        return element;
     }
 });
@@ -37,10 +37,8 @@ var villesMajusculeSeTerminantParS = villes.filter(function(element){
     if(element.lastIndexOf('s')){
         return element;
     }
-}).map(function(element, index, array ){
-    for(var i=0; i<array.length; i++){
-        return array[index].toUpperCase();
-    }
+}).map(function(element){
+        return element.toUpperCase();
 });
 
 console.log(villesMajusculeSeTerminantParS);
