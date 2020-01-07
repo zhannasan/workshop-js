@@ -4,8 +4,7 @@ villes.forEach(function(element){
 });
 
 var lettreADansToutesLesVilles = villes.every(function(element){
-    var lettre = 'a';
-    if(element.indexOf(lettre)>=0){
+    if(element.indexOf('a')>=0){
         return true;
     }
     return false;
@@ -14,8 +13,7 @@ var lettreADansToutesLesVilles = villes.every(function(element){
 console.log(lettreADansToutesLesVilles);
 
 var auMoinsUneVilleAvecUnTiret = villes.some(function(element){
-    var character = "-";
-    if(element.indexOf(character)>=0){
+    if(element.indexOf("-")>=0){
         return true;
     }
     return false;
@@ -24,8 +22,6 @@ var auMoinsUneVilleAvecUnTiret = villes.some(function(element){
 console.log(auMoinsUneVilleAvecUnTiret);
 
 var villesSansTiretSansEspace = villes.filter(function(element){
-    var character = "-";
-    var space = "\u0020";
     if(element.indexOf("-")<0 && element.indexOf("\u0020")<0){
        return element;
     }
